@@ -16,9 +16,11 @@ const getLocalStorage = () => {
   }
   return list;
 };
+//same as above
+const getLocalStorageOne = JSON.parse(localStorage.getItem('list') || []);
 
 const App = () => {
-  const [items, setItems] = useState(getLocalStorage());
+  const [items, setItems] = useState(getLocalStorageOne);
   const addItem = (itemName) => {
     const newItem = {
       name: itemName,
