@@ -12,7 +12,11 @@ function SingleItem({ item, removeItem }) {
         }}
       />
       <p style={{ textDecoration: isChecked && 'line-through' }}>{item.name}</p>
-      <button className='btn remove-btn' type='button'>
+      <button
+        className='btn remove-btn'
+        type='button'
+        onClick={() => removeItem(item.id)}
+      >
         remove
       </button>
     </div>
