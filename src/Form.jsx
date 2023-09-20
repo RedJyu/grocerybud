@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import Items from './Items';
 
-function Form() {
+function Form({ addItem }) {
   const [newItem, setNewItem] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!newItem) {
+      console.log('please add item');
+      return;
+    }
+    addItem(newItem);
+    setNewItem('');
   };
   return (
     <form onSubmit={handleSubmit}>
